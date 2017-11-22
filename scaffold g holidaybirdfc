@@ -1,0 +1,1 @@
+rails g scaffold Holidaybirdfc channel:string sku:string description:string cc:string forecast:integer harvest:integer period:string uom:integer

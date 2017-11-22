@@ -1,0 +1,57 @@
+<%= form_with(model: holidaybirdfc, local: true) do |form| %>
+  <% if holidaybirdfc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(holidaybirdfc.errors.count, "error") %> prohibited this holidaybirdfc from being saved:</h2>
+
+      <ul>
+      <% holidaybirdfc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :channel %>
+    <%= form.text_field :channel, id: :holidaybirdfc_channel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sku %>
+    <%= form.text_field :sku, id: :holidaybirdfc_sku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :holidaybirdfc_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cc %>
+    <%= form.text_field :cc, id: :holidaybirdfc_cc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forecast %>
+    <%= form.number_field :forecast, id: :holidaybirdfc_forecast %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harvest %>
+    <%= form.number_field :harvest, id: :holidaybirdfc_harvest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period %>
+    <%= form.text_field :period, id: :holidaybirdfc_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uom %>
+    <%= form.number_field :uom, id: :holidaybirdfc_uom %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

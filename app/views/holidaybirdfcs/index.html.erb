@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Holidaybirdfcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>Sku</th>
+      <th>Description</th>
+      <th>Cc</th>
+      <th>Forecast</th>
+      <th>Harvest</th>
+      <th>Period</th>
+      <th>Uom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @holidaybirdfcs.each do |holidaybirdfc| %>
+      <tr>
+        <td><%= holidaybirdfc.channel %></td>
+        <td><%= holidaybirdfc.sku %></td>
+        <td><%= holidaybirdfc.description %></td>
+        <td><%= holidaybirdfc.cc %></td>
+        <td><%= holidaybirdfc.forecast %></td>
+        <td><%= holidaybirdfc.harvest %></td>
+        <td><%= holidaybirdfc.period %></td>
+        <td><%= holidaybirdfc.uom %></td>
+        <td><%= link_to 'Show', holidaybirdfc %></td>
+        <td><%= link_to 'Edit', edit_holidaybirdfc_path(holidaybirdfc) %></td>
+        <td><%= link_to 'Destroy', holidaybirdfc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Holidaybirdfc', new_holidaybirdfc_path %>

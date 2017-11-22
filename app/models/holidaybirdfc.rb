@@ -1,0 +1,2 @@
+class Holidaybirdfc < ApplicationRecord
+end
