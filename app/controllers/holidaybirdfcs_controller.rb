@@ -1,6 +1,7 @@
 class HolidaybirdfcsController < ApplicationController
   before_action :set_holidaybirdfc, only: [:show, :edit, :update, :destroy]
-
+  before_action :signed_in?, only: [:new, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
   # GET /holidaybirdfcs
   # GET /holidaybirdfcs.json
   def index
@@ -71,4 +72,16 @@ class HolidaybirdfcsController < ApplicationController
     def holidaybirdfc_params
       params.require(:holidaybirdfc).permit(:channel, :sku, :description, :cc, :forecast, :harvest, :period, :uom)
     end
-end
+
+    def signed_in?
+      unless current_user
+        redirect_to holidaybirdfcs_path, :alert => "Access denied."
+      end
+    end
+
+    def authorize_user!
+      unless current_user.id == @holidaybird.user_id || current_user.admin?
+        redirect_to holidaybirdfc_path(id: @holidaybirdfc.id), :alert => "Access denied."
+      end
+    end
+  end

@@ -1,11 +1,24 @@
 <% if user_signed_in? %>
-  <li>Signed in as <%= current_user.email %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-  <li><%= link_to 'Edit user', edit_user_registration_path %></li>
-  <% if current_user.admin %>
-    <li><%= link_to 'Sign up new user', new_user_registration_path %></li>
-  <% end %>
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
+  <span>Signed in as <%= current_user.email %></span>
 <% end %>
-<li> <%= link_to "Forecast Home", "/"%> </li>
+<div id="navbar">
+  <% if user_signed_in? %>
+    <span><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></span>
+    <span><%= link_to 'Edit user', edit_user_registration_path %></span>
+    <% if current_user.admin %>
+      <span><%= link_to 'Sign up new user', new_user_registration_path %></span>
+    <% end %>
+    <span><%= link_to "Forecast Home", "/" %></span>
+  <% else %>
+    <span><%= link_to 'Sign in', new_user_session_path %></span>
+  <% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

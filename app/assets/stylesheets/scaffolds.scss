@@ -46,6 +46,14 @@ div {
   }
 }
 
+.primary-logo {
+  margin: 0;
+  width: 16.25em;
+  height: 9.4em;
+  float: left;
+  position: relative;
+  background: image-url("DArtagnan_Logo_2015_CMYK_small.jpg");
+}
 #notice {
   color: green;
 }
@@ -81,4 +89,17 @@ div {
 
 label {
   display: block;
+}
+
+#navbar span {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1em 1em 1em 0em;
+  text-decoration: none;
 }
