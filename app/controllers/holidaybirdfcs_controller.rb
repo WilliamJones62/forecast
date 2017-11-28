@@ -80,7 +80,7 @@ class HolidaybirdfcsController < ApplicationController
     end
 
     def authorize_user!
-      unless current_user.id == @holidaybird.user_id || current_user.admin?
+      unless current_user.admin?
         redirect_to holidaybirdfc_path(id: @holidaybirdfc.id), :alert => "Access denied."
       end
     end
